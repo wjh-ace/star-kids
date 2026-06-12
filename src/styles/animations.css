@@ -1,0 +1,156 @@
+/* ============================================================
+   P1-T2c: Global @keyframes Definitions
+   REQ-001 Phase 1 | 小星 Star Kids
+
+   All decorative/ambient animations use CSS @keyframes
+   for GPU-composited performance (no JS overhead).
+   ============================================================ */
+
+/* === Floating Star ===
+   上下浮动 8-12px + 透明度变化
+   用于窗户四角漂浮星星、角色周围星星 */
+@keyframes floatingStar {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-8px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-4px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-12px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.4;
+  }
+}
+
+/* === Twinkle ===
+   缩放 + 透明度闪烁
+   用于星星闪烁效果 */
+@keyframes twinkle {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  30% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.0);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+/* === Soft Pulse ===
+   柔和脉冲，用于夜灯、光晕呼吸效果 */
+@keyframes softPulse {
+  0% {
+    transform: scale(1.0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0.6;
+  }
+}
+
+/* === Dust Motes ===
+   微尘飘动，用于环境氛围
+   模拟空气中细小尘埃在光线中缓慢飘浮 */
+@keyframes dustMotes {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 0.15;
+  }
+  25% {
+    transform: translate(12px, -20px) rotate(60deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-8px, -35px) rotate(140deg);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translate(-18px, -15px) rotate(220deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(360deg);
+    opacity: 0.15;
+  }
+}
+
+/* === Painting Sway ===
+   挂画轻微摇摆 (UX-R14)
+   模拟手工挂画在微风中/重力下的缓慢轻微摆动 */
+@keyframes paintingSway {
+  0% {
+    transform: rotate(-2deg);
+  }
+  25% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(-2.5deg);
+  }
+  75% {
+    transform: rotate(-1.5deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+/* ===== Animation Utility Classes ===== */
+
+.anim-float-star {
+  animation: floatingStar 4s ease-in-out infinite;
+}
+
+.anim-twinkle {
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.anim-soft-pulse {
+  animation: softPulse 3s ease-in-out infinite;
+}
+
+.anim-dust {
+  animation: dustMotes 12s ease-in-out infinite;
+}
+
+.anim-painting-sway {
+  animation: paintingSway 8s ease-in-out infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

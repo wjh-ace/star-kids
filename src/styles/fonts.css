@@ -1,0 +1,102 @@
+/* ============================================================
+   P1-T2b: Font Loading Strategy
+   REQ-001 Phase 1 | 小星 Star Kids
+
+   Font stack (UX-R3):
+   1. ZCOOL Pixel (站酷像素体) — 中文主字体，自托管 .woff2
+   2. Zpix (最像素) — 拉丁/英文首选，自托管 .woff2
+   3. ZCOOL QingKe HuangYou (站酷庆科黄油体) — 圆体 fallback
+   4. Silkscreen — 英文像素 fallback
+   5. Courier New / monospace — 系统兜底
+
+   Strategy:
+   - ZCOOL QingKe HuangYou + Silkscreen imported from Google Fonts CDN
+   - ZCOOL Pixel + Zpix to be self-hosted (place font files in assets/fonts/)
+   - font-display: swap to prevent FOIT
+   ============================================================ */
+
+/* === Google Fonts CDN Imports === */
+
+/* ZCOOL QingKe HuangYou — 圆体手写风格 fallback */
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+
+/* Silkscreen — 英文像素 fallback */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+/* Press Start 2P — 备用英文像素字体（用于弥补 Zpix 未加载时的英文像素需求） */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* === Self-Hosted @font-face Declarations === */
+
+/*
+ * ZCOOL Pixel (站酷像素体) — 中文像素主字体
+ *
+ * TODO: Place zcool-pixel.woff2 in src/assets/fonts/ directory
+ * The font is freely available from:
+ *   https://www.zcool.com.cn/special/zcoolFonts/
+ *
+ * Until the font file is added, ZCOOL QingKe HuangYou (Google Fonts)
+ * will serve as the primary fallback for Chinese characters.
+ */
+@font-face {
+  font-family: 'ZCOOL Pixel';
+  src: url('../assets/fonts/zcool-pixel.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  /* unicode-range targets common CJK characters (3500 most-used Chinese chars) */
+  unicode-range: U+4E00-9FFF, U+3400-4DBF, U+3000-303F, U+FF00-FFEF,
+                 U+2000-206F, U+2E80-2EFF, U+2F00-2FDF, U+2FF0-2FFF,
+                 U+31C0-31EF, U+3200-32FF, U+3300-33FF, U+F900-FAFF,
+                 U+FE10-FE1F, U+FE30-FE4F;
+}
+
+/*
+ * Zpix (最像素) — 拉丁/英文像素字体
+ *
+ * TODO: Place zpix-latin.woff2 in src/assets/fonts/ directory
+ * The font is freely available from:
+ *   https://github.com/SolidZORO/zpix-pixel-font
+ *
+ * Until the font file is added, Silkscreen (Google Fonts) will serve
+ * as the primary fallback for Latin characters.
+ */
+@font-face {
+  font-family: 'Zpix';
+  src: url('../assets/fonts/zpix-latin.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  /* unicode-range targets Latin + common punctuation only */
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
+                 U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+                 U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+                 U+FEFF, U+FFFD;
+}
+
+/* ===== Utility Classes ===== */
+
+/* Pixel text — 应用于所有像素风格文本 */
+.pixel-text {
+  font-family: var(--font-pixel-zh);
+}
+
+.pixel-text-latin {
+  font-family: var(--font-pixel-en);
+}
+
+/* 12-13px 微字号：关闭抗锯齿，保持像素感 (UX-R4) */
+.pixel-text--micro {
+  font-size: 12px;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* 14px+：恢复抗锯齿，避免 Windows 中文锯齿影响可读性 (UX-R4) */
+.pixel-text--normal {
+  font-size: 14px;
+  font-smooth: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

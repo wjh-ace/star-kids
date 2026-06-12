@@ -1,0 +1,89 @@
+/* ============================================================
+   P1-T1: Design Token System — CSS Custom Properties
+   REQ-001 Phase 1 | 小星 Star Kids
+   ============================================================ */
+
+:root {
+  /* ===== Colors — 主色 (PRD Section 5) ===== */
+
+  --color-cream: #FFF8EE;         /* 奶油白 — 小星皮肤、气泡背景 */
+  --color-wood-light: #D4A574;    /* 浅木棕 — 木框边框、工具栏底座 */
+  --color-wood-mid: #A67C52;      /* 中木棕 — 木框暗面、按钮颜色 */
+  --color-wood-dark: #6B4226;     /* 深木棕 — 文字、图标线框 */
+  --color-honey: #E8C56D;         /* 蜂蜜金 — 高光、装饰线、星星 */
+  --color-sage: #9CAF88;          /* 鼠尾草绿 — 小星服装、植物元素 */
+  --color-sky-blue: #A8C8E8;      /* 淡蓝 — 小星斗篷点缀（夜空感） */
+  --color-parchment: #FAF3E3;     /* 羊皮纸 — 聊天区背景 */
+
+  /* ===== Colors — 点缀色 (PRD Section 5) ===== */
+
+  --color-star-gold: #F5D76E;     /* 星光金 — 漂浮星星 */
+  --color-moon-white: #FEF9E7;    /* 月光白 — 发光、光晕 */
+
+  /* ===== Colors — 派生/语义色 ===== */
+
+  --color-star-skin: var(--color-cream);        /* 小星肤色 */
+  --color-bubble-star: var(--color-cream);       /* 小星气泡背景 */
+  --color-bubble-user: #E8D5B7;                  /* 用户气泡背景（浅木棕变体） */
+  --color-text-primary: var(--color-wood-dark);  /* 主文字色 */
+  --color-text-secondary: var(--color-wood-mid); /* 次文字色 */
+  --color-chat-bg: var(--color-parchment);       /* 聊天区背景 */
+
+  /* ===== Spacing — 8px 基准 ===== */
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ===== Border Radius — 4 档 ===== */
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  /* ===== Shadows — 3 档 ===== */
+
+  /* 柔和阴影 — 用于轻微浮起效果 */
+  --shadow-soft: 2px 3px 8px rgba(107, 66, 38, 0.12);
+
+  /* 中等阴影 — 用于卡片/气泡浮起 */
+  --shadow-medium: 3px 5px 16px rgba(107, 66, 38, 0.18);
+
+  /* 暖光阴影 — 暖金色光晕，模拟烛光/灯光 */
+  --shadow-warm: 0 0 20px rgba(232, 197, 109, 0.35),
+                 0 0 40px rgba(245, 215, 110, 0.15);
+
+  /* ===== Font Stacks — UX-R3 修订版 ===== */
+
+  /* 中文像素主字体：站酷像素体（自托管）> Zpix > 圆体 fallback */
+  --font-pixel-zh: 'ZCOOL Pixel', 'Zpix', 'ZCOOL QingKe HuangYou',
+                   'Silkscreen', monospace;
+
+  /* 英文/拉丁像素字体：Zpix 优先 */
+  --font-pixel-en: 'Zpix', 'Silkscreen', 'Courier New', monospace;
+
+  /* 圆体/手写 fallback — 所有像素字体加载失败时的温暖 fallback */
+  --font-fallback: 'ZCOOL QingKe HuangYou', 'Silkscreen', sans-serif;
+
+  /* 系统字体 — placeholder、设置面板等非叙事性文字 */
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 'Helvetica Neue', Arial, sans-serif;
+
+  /* ===== Font Sizes ===== */
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+
+  /* ===== Animation Durations ===== */
+
+  --anim-fast: 150ms;
+  --anim-normal: 300ms;
+  --anim-slow: 600ms;
+  --anim-glacial: 1200ms;
+}

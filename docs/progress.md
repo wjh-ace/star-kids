@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 0/7（项目脚手架）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 1/7（设计 Token + 全局样式）
 
 ## Next
 
@@ -16,7 +16,7 @@
 
 ### Phase 0：项目脚手架
 
-- [ ] **P0-T1**：初始化 Electron + React + Vite + TS 项目骨架
+- [x] **P0-T1**：初始化 Electron + React + Vite + TS 项目骨架
   - 文件：`electron/main.ts`, `electron/preload.ts`, `src/main.tsx`, `vite.config.ts`, `package.json`
   - 验证：`npm run dev` 能启动 Electron 窗口
 
