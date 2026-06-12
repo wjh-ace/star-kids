@@ -1,4 +1,5 @@
 import Environment from './components/Environment/Environment'
+import CameraView from './components/CameraView/CameraView'
 
 function App() {
   return (
@@ -28,18 +29,11 @@ function App() {
         {/* ===== Layer 1: CameraView (55%) ===== */}
         <section
           style={{
-            backgroundColor: '#9E9E9E',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'var(--color-moon-white)',
-            fontFamily: 'var(--font-pixel-zh)',
-            fontSize: 'var(--font-size-lg)',
-            letterSpacing: '0.05em',
             position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          <span>摄像头画面区</span>
+          <CameraView />
         </section>
 
         {/* ===== Layer 2: ChatArea (25%) ===== */}

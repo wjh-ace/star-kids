@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 2/7（布局骨架 + 环境背景）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 3/7（摄像头视频区）
 
 ## Next
 
@@ -31,9 +31,9 @@
 
 ### Phase 2：三层布局骨架 + 环境背景
 
-- [ ] **P2-T1**：实现 CSS Grid 三层布局
+- [x] **P2-T1**：实现 CSS Grid 三层布局
   - 文件：`App.tsx`（`grid-template-rows: 55fr 25fr 20fr`）
-- [ ] **P2-T2**：实现环境背景层
+- [x] **P2-T2**：实现环境背景层
   - 文件：`Environment/Bookshelf.tsx`, `HangingPainting.tsx`, `PottedPlant.tsx`, `NightLamp.tsx`, `WindowScenery.tsx`, `WarmLightOverlay.tsx`
 
 ### Phase 3：摄像头视频区
