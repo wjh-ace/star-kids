@@ -14,8 +14,11 @@
 
 import { useRef } from 'react'
 import { useChatStore } from '../../stores/chatStore'
+import { useUIStore } from '../../stores/uiStore'
 import { useMockChat } from '../../hooks/useMockChat'
 import { useAutoScroll } from '../../hooks/useAutoScroll'
+import { useStarAnimation } from '../../hooks/useStarAnimation'
+import StarAvatar from '../StarAvatar/StarAvatar'
 import ChatBackground from './ChatBackground'
 import MessageList from './MessageList'
 import ScrollHint from './ScrollHint'
@@ -23,9 +26,13 @@ import ScrollHint from './ScrollHint'
 function ChatArea() {
   const messages = useChatStore((s) => s.messages)
   const isTyping = useChatStore((s) => s.isTyping)
+  const starAnimationType = useUIStore((s) => s.starAnimationType)
 
   // Activate mock chat (injects preset conversation + auto-replies)
   useMockChat()
+
+  // Star avatar animation state machine (blink / nod / wave / curious)
+  const { currentAnimation } = useStarAnimation()
 
   // Auto-scroll
   const scrollContainerRef = useRef<HTMLDivElement | null>(null)
@@ -49,26 +56,18 @@ function ChatArea() {
           position: 'relative',
         }}
       >
-        {/* Star avatar placeholder — Phase 5 will replace this */}
+        {/* Star avatar — P5 with real character */}
         <div
-          aria-hidden="true"
           style={{
-            width: '100px',
-            height: '140px',
-            borderRadius: '50% 50% 30% 30%',
-            background:
-              'linear-gradient(180deg, var(--color-cream) 0%, var(--color-wood-light) 100%)',
-            border: '2px solid var(--color-honey)',
-            boxShadow: '0 0 16px rgba(232, 197, 109, 0.25)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '36px',
             position: 'sticky',
             bottom: 'var(--space-md)',
           }}
         >
-          ⭐
+          <StarAvatar
+            animationType={starAnimationType}
+            currentAnimation={currentAnimation}
+            size="normal"
+          />
         </div>
       </div>
 

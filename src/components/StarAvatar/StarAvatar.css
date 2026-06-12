@@ -1,0 +1,689 @@
+/* ============================================================
+   P5-T1/T3: StarAvatar Character Styles & Animations
+   REQ-001 Phase 5 | 小星 Star Kids
+
+   Contains:
+   - Character layout & sizing
+   - Head, face, hair, eyes (with eyelid blink UX-R7)
+   - Body, cape, arms
+   - Glow layers
+   - @keyframes: blink (eyelid), nod, wave, curious, idleFloat
+   ============================================================ */
+
+/* ===== Character Container ===== */
+
+.star-avatar {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.star-avatar--small {
+  width: 80px;
+  height: 120px;
+}
+
+.star-avatar__css {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.star-avatar--small .star-avatar__css {
+  width: 80px;
+  height: 120px;
+}
+
+/* ===== Glow Layers ===== */
+
+.star-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50% 50% 45% 45%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star-glow__inner {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    0 0 4px rgba(232, 197, 109, 0.6),
+    0 0 8px rgba(232, 197, 109, 0.3);
+}
+
+.star-glow__outer {
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  box-shadow:
+    0 0 12px rgba(232, 197, 109, 0.25),
+    0 0 24px rgba(245, 215, 110, 0.12);
+}
+
+/* ===== HEAD ===== */
+
+.star-head {
+  position: relative;
+  width: 76px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+/* Face circle */
+.star-face {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 66px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  box-shadow:
+    inset 0 3px 8px rgba(107, 66, 38, 0.06),
+    inset 0 -2px 4px rgba(107, 66, 38, 0.04);
+}
+
+/* Cheeks (subtle blush) */
+.star-face::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+  width: 12px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(232, 169, 130, 0.25);
+  box-shadow: 30px 0 0 rgba(232, 169, 130, 0.25);
+}
+
+/* ===== HAIR ===== */
+
+.star-hair__top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 42px;
+  background: linear-gradient(
+    180deg,
+    #F2EBE0 0%,
+    #EDE3D4 40%,
+    #E8DCC8 80%,
+    transparent 100%
+  );
+  border-radius: 42px 42px 8px 8px;
+  z-index: 3;
+}
+
+.star-hair__bangs {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62px;
+  height: 20px;
+  background: linear-gradient(180deg, #EDE3D4 0%, transparent 100%);
+  border-radius: 30px 30px 8px 8px;
+  z-index: 4;
+}
+
+.star-hair__side-left {
+  position: absolute;
+  top: 14px;
+  left: 6px;
+  width: 16px;
+  height: 34px;
+  background: #F0E8D8;
+  border-radius: 50% 0 0 50%;
+  z-index: 2;
+}
+
+.star-hair__side-right {
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  width: 16px;
+  height: 34px;
+  background: #F0E8D8;
+  border-radius: 0 50% 50% 0;
+  z-index: 2;
+}
+
+/* ===== STAR HAIR CLIP ===== */
+
+.star-hair-clip {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  z-index: 6;
+  font-size: 16px;
+  color: var(--color-honey);
+  filter: drop-shadow(0 0 3px rgba(232, 197, 109, 0.7));
+  transform: rotate(10deg);
+}
+
+/* ===== EYES ===== */
+
+.star-eye {
+  position: absolute;
+  top: 32px;
+  width: 18px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.star-eye--left {
+  left: 13px;
+}
+
+.star-eye--right {
+  right: 13px;
+}
+
+/* Amber → galaxy gradient eyeball */
+.star-eye__ball {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 35%,
+    #C4956A 0%,
+    #8B5E3C 35%,
+    #6B3A5E 70%,
+    #4A2A5E 100%
+  );
+  border: 1px solid rgba(107, 66, 38, 0.3);
+}
+
+/* Dark pupil */
+.star-eye__pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 7px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 40%,
+    #3C1E0E 0%,
+    #1A0A04 100%
+  );
+}
+
+/* White highlight dots */
+.star-eye__highlight {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Secondary highlight (smaller, top-right) */
+.star-eye__highlight2 {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  width: 2.5px;
+  height: 2.5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== EYELID OVERLAYS (UX-R7: NOT scaleY) ===== */
+
+.star-eye__lid-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: var(--color-cream);
+  border-radius: 0 0 50% 50%;
+  transition: height 0.06s ease-in;
+  z-index: 2;
+}
+
+.star-eye__lid-top--closed {
+  height: 55%;
+}
+
+.star-eye__lid-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: var(--color-cream);
+  border-radius: 50% 50% 0 0;
+  transition: height 0.06s ease-in;
+  z-index: 2;
+}
+
+.star-eye__lid-bottom--closed {
+  height: 15%;
+}
+
+/* ===== MOUTH ===== */
+
+.star-mouth {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 5px;
+  border-bottom: 2px solid rgba(166, 124, 82, 0.5);
+  border-radius: 0 0 6px 6px;
+  z-index: 5;
+}
+
+/* ===== BODY ===== */
+
+.star-body {
+  position: relative;
+  width: 90px;
+  height: 100px;
+  margin-top: -8px;
+  flex-shrink: 0;
+}
+
+/* Inner clothing (cream white / sage) — visible at top */
+.star-body__inner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 30px;
+  background: linear-gradient(
+    180deg,
+    var(--color-cream) 0%,
+    var(--color-sage) 60%,
+    transparent 100%
+  );
+  border-radius: 28px 28px 4px 4px;
+}
+
+/* Cape (deep blue → purple gradient, trapezoid shape) */
+.star-body__cape {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 86px;
+  background: linear-gradient(
+    175deg,
+    #3B5C9E 0%,
+    #4A3F7A 25%,
+    #5C3D6E 50%,
+    #3D2B5F 80%,
+    #2A1A4A 100%
+  );
+  clip-path: polygon(
+    15% 5%,
+    85% 5%,
+    95% 45%,
+    100% 75%,
+    90% 100%,
+    50% 92%,
+    10% 100%,
+    0% 75%,
+    5% 45%
+  );
+  z-index: 1;
+}
+
+/* Cape star decorations */
+.star-body__cape-stars {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 86px;
+  z-index: 2;
+}
+
+.cape-star {
+  position: absolute;
+  font-size: 8px;
+  color: var(--color-star-gold);
+  opacity: 0.7;
+  filter: drop-shadow(0 0 2px rgba(245, 215, 110, 0.4));
+}
+
+.cape-star:nth-child(1) {
+  top: 22px;
+  left: 20px;
+  font-size: 6px;
+}
+
+.cape-star:nth-child(2) {
+  top: 36px;
+  left: 44px;
+  font-size: 7px;
+  opacity: 0.9;
+}
+
+.cape-star:nth-child(3) {
+  top: 52px;
+  left: 28px;
+  font-size: 5px;
+  opacity: 0.5;
+}
+
+.cape-star:nth-child(4) {
+  top: 20px;
+  left: 52px;
+  font-size: 5px;
+  opacity: 0.6;
+}
+
+.cape-star:nth-child(5) {
+  top: 60px;
+  left: 48px;
+  font-size: 6px;
+  opacity: 0.7;
+}
+
+/* ===== ARMS ===== */
+
+.star-arm {
+  position: absolute;
+  top: 28px;
+  width: 14px;
+  height: 34px;
+  background: linear-gradient(
+    180deg,
+    var(--color-cream) 0%,
+    #E8DCC8 50%,
+    var(--color-cream) 100%
+  );
+  border-radius: 7px;
+  z-index: 0;
+}
+
+.star-arm--left {
+  left: -2px;
+  transform-origin: top center;
+}
+
+.star-arm--right {
+  right: -2px;
+  transform-origin: top center;
+}
+
+/* Wave animation (right arm) */
+.star-arm--waving {
+  animation: armWave 0.6s ease-in-out 2;
+}
+
+/* ===== LOTTIE PLACEHOLDER ===== */
+
+.star-avatar__lottie-placeholder {
+  width: 120px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* ===== SURROUNDING STARS ===== */
+
+.star-surrounding {
+  position: absolute;
+  inset: -24px -16px -16px -16px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.surrounding-star {
+  position: absolute;
+  font-size: 10px;
+  color: var(--color-star-gold);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.surrounding-star--1 {
+  top: 10%;
+  left: 5%;
+  font-size: 8px;
+  animation: floatingStar 3.5s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.surrounding-star--2 {
+  top: 5%;
+  right: 8%;
+  font-size: 10px;
+  animation: floatingStar 4.2s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.surrounding-star--3 {
+  bottom: 15%;
+  left: -2%;
+  font-size: 7px;
+  animation: floatingStar 3.8s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.surrounding-star--4 {
+  bottom: 8%;
+  right: 4%;
+  font-size: 9px;
+  animation: floatingStar 4.5s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.surrounding-star--5 {
+  top: 45%;
+  right: -2%;
+  font-size: 6px;
+  animation: twinkle 2.8s ease-in-out infinite;
+  animation-delay: 1.0s;
+}
+
+/* ================================================================
+   CSS @KEYFRAMES
+   ================================================================ */
+
+/* === Idle Float ===
+   Gentle up-down bobbing while idle */
+@keyframes starIdleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.star-avatar--idle .star-avatar__css {
+  animation: starIdleFloat 3s ease-in-out infinite;
+}
+
+/* === Blink (DRIVEN BY CLASS TOGGLE, not keyframes loop) ===
+   UX-R7: Eyelid overlay covers eye from top, not scaleY.
+   See .star-eye__lid-top--closed / .star-eye__lid-bottom--closed */
+
+/* === Nod ===
+   Gentle head dip with slight rotation */
+@keyframes starNod {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  30% {
+    transform: translateY(4px) rotate(3deg);
+  }
+  60% {
+    transform: translateY(5px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.star-head--nod {
+  animation: starNod 0.3s ease-in-out;
+}
+
+/* === Wave ===
+   Right arm swings side to side */
+@keyframes armWave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.star-arm--waving {
+  animation: armWave 0.6s ease-in-out 2;
+}
+
+/* === Curious ===
+   Head tilts, eyes enlarge slightly */
+@keyframes starCurious {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+.star-head--curious {
+  animation: starCurious 0.4s ease-in-out forwards;
+}
+
+.star-eye--curious .star-eye__ball {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* ===== SPRITE SHEET STYLES ===== */
+
+.star-sprite {
+  width: 120px;
+  height: 180px;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  z-index: 2;
+}
+
+.star-sprite--blink {
+  animation: spriteBlink 0.3s steps(2) 1;
+}
+
+.star-sprite--idle {
+  /* Static first frame */
+  background-position: 0 0;
+}
+
+@keyframes spriteBlink {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -240px 0;
+  }
+}
+
+/* Sprite placeholder (CSS fallback when no PNG loaded) */
+.star-sprite--placeholder {
+  width: 120px;
+  height: 180px;
+  background: linear-gradient(
+    180deg,
+    var(--color-cream) 0%,
+    var(--color-cream) 38%,
+    #E0D0B8 38%,
+    #B8A0D0 38%,
+    #7B6BA0 65%,
+    #5A4A80 100%
+  );
+  border-radius: 50% 50% 30% 30%;
+  border: 3px solid var(--color-honey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  position: relative;
+}
+
+.star-sprite--placeholder::after {
+  content: '⭐';
+  position: absolute;
+  top: 8%;
+  font-size: 14px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .star-avatar--idle .star-avatar__css {
+    animation: none;
+  }
+
+  .star-head--nod {
+    animation: none;
+  }
+
+  .star-head--curious {
+    animation: none;
+  }
+
+  .star-arm--waving {
+    animation: none;
+  }
+
+  .surrounding-star--1,
+  .surrounding-star--2,
+  .surrounding-star--3,
+  .surrounding-star--4,
+  .surrounding-star--5 {
+    animation: none;
+    opacity: 0.4;
+  }
+}

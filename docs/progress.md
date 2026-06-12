@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 4/7（聊天区 + 消息气泡）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 5/7（小星角色 + 动画）
 
 ## Next
 
@@ -47,11 +47,11 @@
 
 ### Phase 4：聊天区 + 消息气泡
 
-- [ ] **P4-T1**：实现 `chatStore` + `useMockChat` + 模拟数据
+- [x] **P4-T1**：实现 `chatStore` + `useMockChat` + 模拟数据
   - 文件：`stores/chatStore.ts`, `hooks/useMockChat.ts`, `mock/chatData.ts`, `types/chat.ts`
-- [ ] **P4-T2**：实现聊天区背景 + 消息气泡
+- [x] **P4-T2**：实现聊天区背景 + 消息气泡
   - 文件：`ChatArea.tsx`, `ChatBackground.tsx`, `MessageList.tsx`, `MessageBubble.tsx`
-- [ ] **P4-T3**：实现自动滚动 + 气泡进场动画
+- [x] **P4-T3**：实现自动滚动 + 气泡进场动画
   - 文件：`hooks/useAutoScroll.ts`, `ScrollHint.tsx`
 
 ### Phase 5：小星角色 + 动画
