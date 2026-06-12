@@ -1,5 +1,6 @@
 import Environment from './components/Environment/Environment'
 import CameraView from './components/CameraView/CameraView'
+import ChatArea from './components/ChatArea/ChatArea'
 
 function App() {
   return (
@@ -39,18 +40,11 @@ function App() {
         {/* ===== Layer 2: ChatArea (25%) ===== */}
         <section
           style={{
-            backgroundColor: 'var(--color-parchment)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-pixel-zh)',
-            fontSize: 'var(--font-size-md)',
-            letterSpacing: '0.05em',
             position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          <span>聊天区</span>
+          <ChatArea />
         </section>
 
         {/* ===== Layer 3: ControlBar (20%) ===== */}

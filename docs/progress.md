@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 3/7（摄像头视频区）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 4/7（聊天区 + 消息气泡）
 
 ## Next
 
@@ -38,11 +38,11 @@
 
 ### Phase 3：摄像头视频区
 
-- [ ] **P3-T1**：实现 `useCamera` hook + `cameraStore`
+- [x] **P3-T1**：实现 `useCamera` hook + `cameraStore`
   - 文件：`hooks/useCamera.ts`, `stores/cameraStore.ts`, `types/camera.ts`
-- [ ] **P3-T2**：实现木纹边框组件（SVG 滤镜方案）
+- [x] **P3-T2**：实现木纹边框组件（SVG 滤镜方案）
   - 文件：`WoodFrame.tsx`
-- [ ] **P3-T3**：实现 CameraView + 漂浮星星（Canvas）+ 暗角
+- [x] **P3-T3**：实现 CameraView + 漂浮星星（Canvas）+ 暗角
   - 文件：`CameraView.tsx`, `FloatingStars.tsx`, `VignetteOverlay.tsx`
 
 ### Phase 4：聊天区 + 消息气泡
