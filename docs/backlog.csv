@@ -1,0 +1,2 @@
+id,name,description,pipeline_status,复杂度,阻塞原因,文档,version,priority,created_date,updated_date
+REQ-001,UI 框架搭建,"搭建 Electron+React 桌面应用骨架，实现完整界面布局：摄像头画面区 + 小星浮层 + 对话气泡区 + 控制栏，用模拟数据验证交互流程",planning,M,,docs/requirements/REQ-001/,v0.1,P0,2026-06-12,2026-06-12
