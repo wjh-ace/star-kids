@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 5/7（小星角色 + 动画）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 6/7（工具栏 + 输入交互）
 
 ## Next
 
@@ -56,13 +56,13 @@
 
 ### Phase 5：小星角色 + 动画
 
-- [ ] **P5-T1**：实现 StarAvatar CSS 轨道（静态角色 + 眼睑覆盖层）
+- [x] **P5-T1**：实现 StarAvatar CSS 轨道（静态角色 + 眼睑覆盖层）
   - 文件：`StarAvatar.tsx`, `StarHead.tsx`, `StarBody.tsx`, `StarGlow.tsx`
-- [ ] **P5-T2**：实现 StarAvatar Sprite Sheet 轨道
+- [x] **P5-T2**：实现 StarAvatar Sprite Sheet 轨道
   - 文件：`StarSprite.tsx`, `starSprite.css`, `assets/sprites/star-sprite.png`
-- [ ] **P5-T3**：实现 `useStarAnimation` + 角色动画
+- [x] **P5-T3**：实现 `useStarAnimation` + 角色动画
   - 文件：`hooks/useStarAnimation.ts`, `StarAvatar.css`
-- [ ] **P5-T4**：实现角色周围漂浮星星 + 发光轮廓
+- [x] **P5-T4**：实现角色周围漂浮星星 + 发光轮廓
   - 文件：`SurroundingStars.tsx`
 
 ### Phase 6：工具栏 + 输入交互

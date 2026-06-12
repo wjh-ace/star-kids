@@ -1,6 +1,7 @@
 import Environment from './components/Environment/Environment'
 import CameraView from './components/CameraView/CameraView'
 import ChatArea from './components/ChatArea/ChatArea'
+import ControlBar from './components/ControlBar/ControlBar'
 
 function App() {
   return (
@@ -50,18 +51,11 @@ function App() {
         {/* ===== Layer 3: ControlBar (20%) ===== */}
         <section
           style={{
-            backgroundColor: 'var(--color-wood-light)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'var(--color-moon-white)',
-            fontFamily: 'var(--font-pixel-zh)',
-            fontSize: 'var(--font-size-md)',
-            letterSpacing: '0.05em',
             position: 'relative',
+            overflow: 'hidden',
           }}
         >
-          <span>工具栏</span>
+          <ControlBar />
         </section>
       </div>
     </>
