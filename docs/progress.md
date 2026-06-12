@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 1/7（设计 Token + 全局样式）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 2/7（布局骨架 + 环境背景）
 
 ## Next
 
@@ -22,11 +22,11 @@
 
 ### Phase 1：设计 Token + 全局样式
 
-- [ ] **P1-T1**：建立设计 Token 体系（CSS 变量）
+- [x] **P1-T1**：建立设计 Token 体系（CSS 变量）
   - 文件：`styles/tokens.css`
-- [ ] **P1-T2**：全局样式 + 字体引入 + 动画定义
+- [x] **P1-T2**：全局样式 + 字体引入 + 动画定义
   - 文件：`styles/global.css`, `styles/fonts.css`, `styles/animations.css`, 字体文件
-- [ ] **P1-T3**：全局噪点纹理 + SVG 木纹滤镜定义
+- [x] **P1-T3**：全局噪点纹理 + SVG 木纹滤镜定义
   - 文件：`styles/global.css`, `assets/textures/wood-texture.svg`
 
 ### Phase 2：三层布局骨架 + 环境背景
