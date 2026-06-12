@@ -49,7 +49,7 @@ function MessageBubble({ message }: MessageBubbleProps) {
         fontSize: 'var(--font-size-lg)',
         lineHeight: '1.6',
         color: 'var(--color-text-primary)',
-        boxShadow: '0 0 8px rgba(232, 197, 109, 0.3)',
+        boxShadow: '1px 2px 8px rgba(232, 197, 109, 0.3)',
         wordBreak: 'break-word',
         whiteSpace: 'pre-wrap',
       }
@@ -81,7 +81,7 @@ function MessageBubble({ message }: MessageBubbleProps) {
               top: -10,
               left: -2,
               fontSize: '12px',
-              filter: 'drop-shadow(0 0 2px rgba(232, 197, 109, 0.6))',
+              filter: 'drop-shadow(1px 1px 2px rgba(232, 197, 109, 0.6))',
               lineHeight: 1,
               pointerEvents: 'none',
             }}

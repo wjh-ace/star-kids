@@ -20,8 +20,8 @@ function Bookshelf() {
     <div
       style={{
         position: 'fixed',
-        left: '-2%',
-        top: '10%',
+        left: '-1.7%',
+        top: '10.3%',
         width: '140px',
         height: '220px',
         filter: 'blur(6px)',

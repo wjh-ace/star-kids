@@ -153,7 +153,7 @@ function CameraView() {
               position: 'relative',
               width: '100%',
               height: '100%',
-              backgroundColor: '#2E2E2E', // fallback before video loads
+              backgroundColor: '#3E2A1F', // warm dark fallback before video loads
               overflow: 'hidden',
             }}
           >

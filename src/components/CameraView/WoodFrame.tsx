@@ -57,7 +57,7 @@ function WoodFrame({
   const edgeId = `wood-edge-${woodSeed}`
 
   const glowShadow = hasGlow
-    ? ', 0 0 20px rgba(232, 197, 109, 0.2)'
+    ? ', 1px 2px 20px rgba(232, 197, 109, 0.2)'
     : ''
 
   return (
@@ -163,7 +163,7 @@ function WoodFrame({
           overflow: 'hidden',
           backgroundColor: '#D4A574',
           boxShadow: [
-            'inset 0 0 30px rgba(107, 66, 38, 0.25)',
+            'inset 2px 3px 30px rgba(107, 66, 38, 0.25)',
             '2px 3px 12px rgba(107, 66, 38, 0.35)',
             glowShadow,
           ]

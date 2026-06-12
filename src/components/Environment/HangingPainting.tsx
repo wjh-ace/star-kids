@@ -7,8 +7,8 @@ function HangingPainting() {
     <div
       style={{
         position: 'fixed',
-        right: '3%',
-        top: '5%',
+        right: '3.2%',
+        top: '5.3%',
         width: '90px',
         height: '110px',
         filter: 'blur(5px)',
@@ -52,10 +52,10 @@ function HangingPainting() {
           position: 'absolute',
           inset: 0,
           border: '6px solid var(--color-wood-mid)',
-          borderRadius: '4px',
+          borderRadius: '5px 3px 4px 2px',
           backgroundColor: 'var(--color-wood-dark)',
           boxShadow: `
-            inset 0 0 8px rgba(0,0,0,0.2),
+            inset 1px 2px 8px rgba(62, 30, 15, 0.25),
             2px 3px 8px rgba(107,66,38,0.3)
           `,
         }}

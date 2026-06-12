@@ -14,7 +14,7 @@ function WarmLightOverlay() {
         pointerEvents: 'none',
         zIndex: 0,
         background:
-          'radial-gradient(ellipse at 25% 25%, transparent 0%, rgba(107,66,38,0.08) 60%, rgba(107,66,38,0.15) 100%)',
+          'radial-gradient(ellipse 80% 60% at 25% 25%, rgba(255,220,160,0.12) 0%, rgba(255,200,120,0.05) 40%, transparent 70%)',
       }}
     />
   )

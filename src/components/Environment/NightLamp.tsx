@@ -7,8 +7,8 @@ function NightLamp() {
     <div
       style={{
         position: 'fixed',
-        right: '8%',
-        bottom: '5%',
+        right: '7.7%',
+        bottom: '5.5%',
         width: '60px',
         height: '100px',
         filter: 'blur(4px)',

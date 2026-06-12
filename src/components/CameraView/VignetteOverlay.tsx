@@ -25,7 +25,7 @@ function VignetteOverlay() {
           zIndex: 2,
           pointerEvents: 'none',
           borderRadius: 'inherit',
-          boxShadow: 'inset 0 0 80px 20px rgba(0, 0, 0, 0.25)',
+          boxShadow: 'inset 2px 4px 80px 20px rgba(62, 30, 15, 0.30)',
         }}
       />
 

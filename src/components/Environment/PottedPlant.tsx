@@ -15,8 +15,8 @@ function PottedPlant({ side }: PottedPlantProps) {
     <div
       style={{
         position: 'fixed',
-        [isLeft ? 'left' : 'right']: '2%',
-        bottom: '5%',
+        [isLeft ? 'left' : 'right']: isLeft ? '2.4%' : '1.8%',
+        bottom: isLeft ? '4.7%' : '5.3%',
         width: '70px',
         height: '90px',
         filter: 'blur(5px)',

@@ -165,6 +165,7 @@ function FloatingStars({ count = 12 }: FloatingStarsProps) {
         inset: 0,
         zIndex: 3,
         pointerEvents: 'none',
+        willChange: 'transform',
       }}
     />
   )

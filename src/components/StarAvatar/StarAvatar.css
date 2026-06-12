@@ -58,8 +58,8 @@
   inset: 0;
   border-radius: inherit;
   box-shadow:
-    0 0 4px rgba(232, 197, 109, 0.6),
-    0 0 8px rgba(232, 197, 109, 0.3);
+    1px 2px 4px rgba(232, 197, 109, 0.6),
+    -1px 1px 8px rgba(232, 197, 109, 0.3);
 }
 
 .star-glow__outer {
@@ -67,8 +67,8 @@
   inset: -6px;
   border-radius: inherit;
   box-shadow:
-    0 0 12px rgba(232, 197, 109, 0.25),
-    0 0 24px rgba(245, 215, 110, 0.12);
+    2px 3px 12px rgba(232, 197, 109, 0.25),
+    -2px -1px 24px rgba(245, 215, 110, 0.12);
 }
 
 /* ===== HEAD ===== */
@@ -171,7 +171,7 @@
   z-index: 6;
   font-size: 16px;
   color: var(--color-honey);
-  filter: drop-shadow(0 0 3px rgba(232, 197, 109, 0.7));
+  filter: drop-shadow(1px 1px 3px rgba(232, 197, 109, 0.7));
   transform: rotate(10deg);
 }
 
@@ -370,7 +370,7 @@
   font-size: 8px;
   color: var(--color-star-gold);
   opacity: 0.7;
-  filter: drop-shadow(0 0 2px rgba(245, 215, 110, 0.4));
+  filter: drop-shadow(1px 1px 2px rgba(245, 215, 110, 0.4));
 }
 
 .cape-star:nth-child(1) {

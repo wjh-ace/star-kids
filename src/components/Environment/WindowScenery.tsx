@@ -7,10 +7,10 @@ function WindowScenery() {
     <div
       style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
+        top: '0.2%',
+        left: '-0.3%',
         width: '100vw',
-        height: '55vh',
+        height: '55.5vh',
         pointerEvents: 'none',
         zIndex: 0,
         filter: 'blur(7px)',

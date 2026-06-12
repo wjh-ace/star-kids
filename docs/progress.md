@@ -2,7 +2,7 @@
 
 ## Now
 
-**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 6/7（工具栏 + 输入交互）
+**REQ-001** UI 框架搭建 — `executing` 阶段，Phase 7/7（集成联调 + 细节打磨）
 
 ## Next
 
@@ -67,11 +67,11 @@
 
 ### Phase 6：工具栏 + 输入交互
 
-- [ ] **P6-T1**：实现工具栏底座 + 按钮布局
+- [x] **P6-T1**：实现工具栏底座 + 按钮布局
   - 文件：`ControlBar.tsx`
-- [ ] **P6-T2**：实现 TextInput + 中文输入法兼容
+- [x] **P6-T2**：实现 TextInput + 中文输入法兼容
   - 文件：`TextInput.tsx`
-- [ ] **P6-T3**：实现 ToolButton + 手绘 SVG 图标（48×48px）
+- [x] **P6-T3**：实现 ToolButton + 手绘 SVG 图标（48×48px）
   - 文件：`ToolButton.tsx`, `icons/*.svg`
 
 ### Phase 7：集成联调 + 细节打磨

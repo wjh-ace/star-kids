@@ -66,7 +66,7 @@ function ScrollHint({
         fontFamily: 'var(--font-pixel-zh)',
         fontSize: 'var(--font-size-sm)',
         cursor: 'pointer',
-        boxShadow: '0 2px 8px rgba(107, 66, 38, 0.15)',
+        boxShadow: '1px 2px 8px rgba(107, 66, 38, 0.15)',
         transition: 'opacity 0.3s ease',
         whiteSpace: 'nowrap',
       }}
